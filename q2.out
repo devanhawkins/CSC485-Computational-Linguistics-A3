@@ -1,0 +1,34 @@
+[Synset('freshener.n.01'), Synset('jimdandy.n.02'), Synset('whacker.n.01'), Synset('stinker.n.02'), Synset('otherworld.n.01'), Synset('security_blanket.n.01'), Synset('substance.n.04'), Synset('change.n.06'), Synset('pacifier.n.02'), Synset('horror.n.02')]   2
+[Synset('black_marlin.n.01'), Synset('blue_marlin.n.01'), Synset('gayal.n.01'), Synset('striped_marlin.n.01'), Synset('sierra.n.02'), Synset('aberdeen_angus.n.01'), Synset('milking_shorthorn.n.01'), Synset('longhorn.n.01'), Synset('springer.n.02'), Synset('bucking_bronco.n.01'), Synset('blue_pike.n.01'), Synset('santa_gertrudis.n.01'), Synset('guernsey.n.02'), Synset('galloway.n.02'), Synset('gaur.n.01'), Synset('leather_carp.n.01'), Synset('hereford.n.01'), Synset('ayrshire.n.01'), Synset('charolais.n.01'), Synset('mirror_carp.n.01'), Synset('friesian.n.01'), Synset('durham.n.02'), Synset('cero.n.01'), Synset('white_marlin.n.01'), Synset('cattalo.n.01'), Synset('scomberomorus_maculatus.n.01'), Synset('jersey.n.05'), Synset('brown_swiss.n.01'), Synset('king_mackerel.n.01'), Synset('black_buffalo.n.01')]   18
+total_nodes from entity: 74374  internal_nodes from entity: 16682  leaf_nodes from entity: 57692  ratio: 0.775701185898
+Total Nodes: 82115 , Total leaf Nodes: 65422, Ratio: 0.796712
+car-automobile & 1.0 &  \\
+gem-jewel & 1.0 &  \\
+magician-wizard & 1.0 &  \\
+midday-noon & 1.0 &  \\
+journey-voyage & 0.5 &  \\
+boy-lad & 0.5 &  \\
+coast-shore & 0.5 &  \\
+asylum-madhouse & 0.5 &  \\
+bird-cock & 0.5 &  \\
+tool-implement & 0.5 &  \\
+brother-monk & 0.5 &  \\
+bird-crane & 0.25 &  \\
+lad-brother & 0.2 &  \\
+crane-implement & 0.2 &  \\
+coast-hill & 0.2 &  \\
+shore-woodland & 0.2 &  \\
+monk-slave & 0.2 &  \\
+lad-wizard & 0.2 &  \\
+coast-forest & 0.166666666667 &  \\
+monk-oracle & 0.125 &  \\
+glass-magician & 0.125 &  \\
+cemetery-woodland & 0.111111111111 &  \\
+forest-graveyard & 0.111111111111 &  \\
+furnace-stove & 0.1 &  \\
+food-fruit & 0.1 &  \\
+chord-smile & 0.0909090909091 &  \\
+noon-string & 0.0833333333333 &  \\
+food-rooster & 0.0625 &  \\
+journey-car & 0.0555555555556 &  \\
+rooster-voyage & 0.0416666666667 &  \\

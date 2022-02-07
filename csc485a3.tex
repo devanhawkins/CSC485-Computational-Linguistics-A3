@@ -1,0 +1,141 @@
+\documentclass{article}
+\usepackage{qtree}
+\usepackage{graphicx}
+\author{Michael Dzamba - 994803806}
+\title{CSC485 A3}
+
+\usepackage{amsmath}
+
+
+\begin{document}
+\maketitle
+
+\section{Verb complements and gap features}
+\begin{enumerate}
+\item[i.] The student preferred to leave.
+\item[ii.] The student persuaded the teacher to leave.
+\item[iii.] The student promised the teacher to leave.
+\item[iv.] The student expected the teacher to leave.
+
+\end{enumerate}
+\begin{enumerate}
+\item[A)] For each of the sentences (ii)-(iv) above, state each role received from the verbs by the NPs \textit{the student and the teacher}
+\begin{enumerate}
+\item[i.] 'The student' is the agent of 'preffered' and of 'leave'.
+\item[ii.] 'The student' is the agent of 'persauded'.\\'the teacher' is the theme of 'persauded' and the agent of 'leave'.
+\item[iii.] 'The student' is the agent of 'promised' and of 'leave'.\\'the teacher' is the theme of 'promised'.
+\item[iv.] 'The student' is the agent of 'expected'.\\'the teacher' is the theme of 'expected' and the agent of 'leave'.
+\end{enumerate}
+\item[B)] The grammar provided below is quite minimal in order to provide only those features necesasary to ensure the appropriate interpretation of NPs with respect to semantic roles. Additional argument feature structures can be easily added to support larger lexicon and more complex sentences, but they were not because of they were not specifically requested in the assignment and I did not want to clutter the grammar. $\epsilon$ strings were used to store the SEM role of each gap NP, and the tree structure along with these gaps should be sufficient to distinguish the semantic role of each NP. Also there is an assumption made that if a feature relation copies an feature from another node in the parse tree, then at one point that feature relation must fill in that copy, if not the parse is assumed to fail.
+\begin{align*}	
+\text{S} \rightarrow \text{NP VP}  & & & \left  [ \begin{array}{c} <\text{VP GAP SEM}>\text{ = }<\text{NP SEM}> \end{array} \right ] \\
+\text{VP} \rightarrow \text{V VP}_{to} &  & & \left  [ \begin{array}{c} <\text{V TV}>\text{ = } \text{SG} \\ <\text{VP GAP SEM}>\text{ = } <\text{VP}_{to} \text{ GAP SEM}> \end{array} \right ] \\
+\text{VP} \rightarrow \text{V NP VP}_{to} & & & \left  [ \begin{array}{c} <\text{V TV}>\text{ = } \text{BI} \\ <\text{V INF-USE-OBJ}>\text{ = } \text{TRUE} \\ <\text{VP}_{to} \text{ GAP SEM}> \text{ = } <\text{NP SEM}> \end{array} \right ] \\
+\text{VP} \rightarrow \text{V NP VP}_{to} & & & \left  [ \begin{array}{c} <\text{V TV}>\text{ = } \text{BI} \\ <\text{V INF-USE-OBJ}>\text{ = } \text{FALSE} \\ <\text{VP}_{to} \text{ GAP SEM}> \text{ = } <\text{NP SEM}> \\ <\text{NP GAP SEM}> \text{ = } <\text{VP GAP SEM}> \end{array} \right ] \\
+\text{VP}_{to} \rightarrow \text{NP V}_{to} &  & & \left  [ \begin{array}{c} <\text{VP}_{to} \text{ GAP SEM}>\text{ = } <\text{NP GAP SEM}>  \end{array} \right ] \\
+\text{NP} \rightarrow \epsilon &  & & \left  [ \begin{array}{c} <\text{NP SEM}>\text{ = } <\text{NP GAP SEM}>  \end{array} \right ] \\
+\text{NP} \rightarrow \text{DET N} &  & & \left  [ \begin{array}{c} <\text{NP SEM}>\text{ = } <\text{N SEM}>  \end{array} \right ] \\
+\text{DET} \rightarrow \text{'the'} &  & &  \\
+\text{N} \rightarrow \text{'student'} &  & &   \left  [ \begin{array}{c} <\text{SEM}>\text{ = } \text{'student'}  \end{array} \right ] \\
+\text{N} \rightarrow \text{'teacher'} &  & &  \left  [ \begin{array}{c} <\text{SEM}>\text{ = } \text{'teacher'}  \end{array} \right ] \\
+\text{V} \rightarrow \text{'preferred'} &  & &  \left  [ \begin{array}{c} <\text{TV}>\text{ = } \text{SG}  \end{array} \right ] \\
+\text{V} \rightarrow \text{'persauded'} &  & &  \left  [ \begin{array}{c} <\text{TV}>\text{ = } \text{BI} \\ <\text{INF-USE-OBJ}> \text{ = } <\text{TRUE}> \end{array} \right ] \\
+\text{V} \rightarrow \text{'promised'} &  & &  \left  [ \begin{array}{c} <\text{TV}>\text{ = } \text{BI} \\ <\text{INF-USE-OBJ}> \text{ = } <\text{FALSE}> \end{array} \right ] \\
+\text{V} \rightarrow \text{'expected'} &  & &  \left  [ \begin{array}{c} <\text{TV}>\text{ = } <\text{SG}>  \end{array} \right ] \\
+\text{V}_{to} \rightarrow \text{'to leave'} &  & & 
+\end{align*}
+\item[C)] For the parse tree please see attached diagram.
+\end{enumerate}
+
+\section{Playing with WordNet}
+\begin{enumerate}
+\item[A)] An example of the deepest leaf is '' with a depth of 18 from the entity root node. An example of the shallowest leaf is '' with a depth of 2 from the entity root node. The ratio of leaf nodes to total nodes in the tree rooted at the entity node is $\approx 0.797$, but when considering all nodes and not just those rooted at the entity the ratio is $\approx0.776$.
+\item[B)] In the table below the scores of $path_similarity$ are called on each pair using word net. A important thing to note is that in the Charles and Miller rankings the rankings are in the range of $[0,5]$ while word net similarities are in the range of $[0,1]$. Two of the most different rankings are the pairs 'lad-wizard' and 'furnace-stove'. The similarity of 'lad-wizard' seems to be relatively much higher in word net then in the human trials. This may be due to an additional hypernym-hyponym connection that is not commonly thought of or used in modern english. The similarity of 'furnace-stove' is relatively much lower then what the human trials provided, this may be due to a lack of more direct relation between the two synsets in word net. In any case, addition or subtraction of more hypernym-hyponym relations may not solve these problems. This is because if every edge is considered to be the same weight as all others this may cause problems with their frequency and usage in modern english. For example although a direct hypernym-hyponym relation may exist between node A and B this does not mean that the relation is common knowledge and that the human trials would reflect this. Also a long distance relation may exist between two nodes A and B, that is very frequently used in modern english and could bias the nouns into having a lower score in human trials. 
+\begin{tabular}{c  | c c c c }
+Noun-pair & WN score $\in [0,1]$ & Miller Score $\in [0,5]$ & Miller Rank & WN Rank \\ \hline
+car-automobile & 1.0 & 3.92 & 1 & $\in [1,4]$\\
+gem-jewel & 1.0 &  3.84 & 2 & $\in [1,4]$ \\
+magician-wizard & 1.0 & 3.50 & 7 &  $\in [1,4]$ \\
+midday-noon & 1.0 & 3.42 & 8 &  $\in [1,4]$ \\
+journey-voyage & 0.50 & 3.84 & 3 &  $\in [5,11]$\\
+boy-lad & 0.50 & 3.76 & 4 & $\in [5,11]$ \\
+coast-shore & 0.50 & 3.70 & 5 & $\in [5,11]$\\
+asylum-madhouse & 0.50 & 3.61 & 6 & $\in [5,11]$ \\
+bird-cock & 0.50 & 3.05 & 11 & $\in [5,11]$\\
+tool-implement & 0.50 & 2.95 & 13 & $\in [5,11]$ \\
+brother-monk & 0.50 & 2.82 & 14 & $\in [5,11]$\\
+bird-crane & 0.25 & 2.97 & 12 & 12 \\
+lad-brother & 0.20 & 1.66 & 15 & $\in [13,18]$ \\
+crane-implement & 0.20 & 1.68 & 16  & $\in [13,18]$ \\
+coast-hill & 0.20 & 0.87 & 21 & $\in [13,18]$\\
+shore-woodland & 0.20 & 0.63 & 23 & $\in [13,18]$\\
+monk-slave & 0.20 & 0.55 & 24 & $\in [13,18]$\\
+lad-wizard* & 0.20 & 0.42 & 26 & $\in [13,18]$ \\
+coast-forest & 0.17 & 0.42 & 25 & 19\\
+monk-oracle & 0.13 & 1.10 & 18 & $\in [20,21]$ \\
+glass-magician & 0.13 & 0.11 & 28 & $\in [20,21]$\\
+cemetery-woodland & 0.11 & 0.95 & 19 & $\in [22,23]$\\
+forest-graveyard & 0.11 & 0.84 & 22 & $\in [22,23]$\\
+furnace-stove** & 0.10 & 3.11 & 9 & $\in [24,25]$\\
+food-fruit & 0.10 & 3.08 & 10 & $\in [24,25]$\\
+chord-smile & 0.091 & 0.13 & 27 & 26\\
+noon-string & 0.083 & 0.08 & 30 & 27\\
+food-rooster & 0.063 & 0.89 & 20 & 28\\
+journey-car & 0.056 & 1.16 & 17 & 29 \\
+rooster-voyage & 0.042 & 0.08 & 29 & 30
+\end{tabular}
+
+\end{enumerate}
+
+\section{Corpus based disambiguation}
+\begin{enumerate}
+\item[B)]
+Where $v=swam$, $n=whales$ and $p=onto$
+\begin{align*}
+Pr(v,n,p,a)&=Pr(v) \cdot Pr(n) \cdot Pr(a|v,n) \cdot Pr(p|a,v,n)\\
+cl(v,n,p,n2)&= \left \{ \begin{array}{ll} N & if\text{ } p=of \\ arg \text{ } max_{a \in \{N,V\}} Pr(v,n,p,a) & otherwise \end{array} \right.\\
+&= \left \{ \begin{array}{ll} N & if \text{ } p=of \\ arg \text{ } max_{a \in \{N,V\}} Pr(a|v,n) \cdot Pr(p|a,v,n) & otherwise \end{array} \right.
+\end{align*}
+\begin{align*}
+c()=42, c(n,true)=14, c(n,p,true)=3, c(v)=10, c(v,true)=8, c(v,p,true)=3
+\end{align*}
+\begin{align*}
+Pr(true|n) &= \left \{ \begin{array}{ll} \dfrac{c(n,true)}{c(n)}, & c(n)>0 \\ 0.5, & otherwise \end{array} \right. & & & Pr(true|v) &= \left \{ \begin{array}{ll} \dfrac{c(v,true)}{c(v)}, & c(v)>0 \\ 0.5, & otherwise \end{array} \right. \\
+&= \dfrac{14}{42} = \dfrac{1}{3} & & & &= \dfrac{8}{10} = \dfrac{4}{5}
+\end{align*}
+\begin{align*}Pr(p|true,n) &= \left \{ \begin{array}{ll} \dfrac{c(n,p,true)}{c(n,true)}, & c(n,true)>0 \\ \dfrac{1}{|P|}, & otherwise \end{array} \right.\\
+&= \dfrac{3}{14} \\
+Pr(p|true,v) &= \left \{ \begin{array}{ll} \dfrac{c(v,p,true)}{c(v,true)}, & c(v,true)>0 \\ \dfrac{1}{|P|}, & otherwise \end{array} \right. \\
+& = \dfrac{3}{8}
+\end{align*}
+\begin{align*}
+Pr(V|v,n) \cdot P(p|V,v,n) & \approx \dfrac{Pr(true|v)}{Pr(true|n) + Pr(true|v)} \cdot Pr(p|true,v) \\
+& = \dfrac{\dfrac{4}{5}}{\dfrac{4}{5} + \dfrac{1}{3}} \cdot \dfrac{3}{8} = \dfrac{9}{34} \approx 0.265\\
+Pr(N|v,n) \cdot P(p|N,v,n) & \approx \dfrac{Pr(true|n)}{Pr(true|n) + Pr(true|v)} \cdot Pr(p|true,n) \\
+& = \dfrac{\dfrac{1}{3}}{\dfrac{4}{5} + \dfrac{1}{3}} \cdot \dfrac{3}{14} = \dfrac{15}{238} \approx 0.0630
+\end{align*}
+Thus $cl(v,n,p,n2)=V$, the preferred attachment is to the Verb.
+\item[C)]
+\begin{enumerate}
+\item[i.] For the example, 'placed seals onto', there are 11 occurences of the word 'placed' in the text, but there are 0 occurences of the word 'placed' in text that overlaps with a non-ambiguous propositional phrase gathered in training data. The backoff formulas are used only when the denominator is of 0 value, thus $Pr(p|true,v)>0$ even though $c(v,true)=0$ (by back-off), but $c(v)>0$ and so $Pr(true|v)=0$ and hence the verb attachment probability is 0.
+\begin{align*}
+Pr(v,n,p,V) &=Pr(v) \cdot Pr(n) \cdot Pr(V|v,n) \cdot Pr(p|V,v,n) \\
+&\approx Pr(v) \cdot Pr(n) \cdot \dfrac{Pr(true|v)}{Pr(true|n) + Pr(true|v)} \cdot Pr(p|true,v)\\
+&=Pr(v) \cdot Pr(n) \cdot \dfrac{0}{Pr(true|n) + Pr(true|v)} \cdot Pr(p|true,v)=0
+\end{align*}
+For the example 'advanced whales for', there are 5 occurences of the word 'advanced' in the text, and there are 3 occurences of the word 'advanced' in distinct training examples, but there are 0 occurences of the word 'advanced' with a propositional phrase 'for' attached to it in the training data. This causes the backoff not to be used when calculating $Pr(true|v)$ resulting in $Pr(p|true,v)=0$ which causes the verb attachment probability to be 0. 
+\begin{align*}
+Pr(v,n,p,V) &=Pr(v) \cdot Pr(n) \cdot Pr(V|v,n) \cdot Pr(p|V,v,n) \\
+&\approx Pr(v) \cdot Pr(n) \cdot \dfrac{Pr(true|v)}{Pr(true|n) + Pr(true|v)} \cdot Pr(p|true,v)\\
+&=Pr(v) \cdot Pr(n) \cdot \dfrac{Pr(true|v)}{Pr(true|n) + Pr(true|v)} \cdot \dfrac{c(v,p,true)}{c(v,true)}\\
+&=Pr(v) \cdot Pr(n) \cdot \dfrac{Pr(true|v)}{Pr(true|n) + Pr(true|v)} \cdot \dfrac{0}{c(v,true)}=0
+\end{align*}
+\item[ii.] Using the smoothed estimates from 4.2.2 instead of those in 4.2.1, this will change one of the verb attachment probabilities from 0 to non-zero from above. This is because $Pr(p|true,v) \ne 0$ when $c(v,p,true)=0$ in the example 'advanced whales for' using estimates from 4.2.2. In the case of 'placed seals onto' this will not change the fact that the verb attachment probability is zero, since the term causing this is $Pr(true|v)=0$ and the calculation of this estimate is not changed in 4.2.2.
+\item[iii.] The cases for when the back-off formulas to be used in $Pr(true|a)$ are when $c(a)=0$, when this happens then $c(a)=0 \rightarrow c(a,true)=0 \rightarrow c(a,p,true)=0$, thus back-off formulas are used in both parts of the equation when $c(a)=0$. If $c(a)\ne 0$ then to get a non-zero probability $c(a,true)>0$ and if this is the case then no back-off formulas are used.
+\end{enumerate}
+\end{enumerate}
+
+
+
+\end{document}
+
